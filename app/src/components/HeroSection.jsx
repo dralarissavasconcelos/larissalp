@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { AnimatedCard } from './AnimatedCard'
 import { AnimatedNumberBadge } from './AnimatedNumberBadge'
+import { LeadForm } from './LeadForm'
 
 export function HeroSection() {
+  const [coletaAberta, setColetaAberta] = useState(false)
   return (
     <section className="relative w-full overflow-hidden bg-background">
       <div className="hidden lg:block relative w-full min-h-screen">
@@ -39,7 +42,7 @@ export function HeroSection() {
                   Existe um tipo de vidraceiro que vive preso em um ciclo:
                 </p>
                 <ul className="space-y-4 pl-0 list-none">
-                  {['trabalha o dia inteiro na obra', 'corre atrás de orçamento', 'negocia preço com cliente', 'resolve problema de equipe', 'e no final do mês… sobra pouco lucro.'].map((texto, index) => (
+                  {['Trabalha o dia inteiro na obra', 'Corre atrás de orçamento', 'Negocia preço com cliente', 'Resolve problema de equipe', 'E no final do mês… sobra pouco lucro.'].map((texto, index) => (
                     <li key={texto} className="flex gap-4 items-start">
                       <AnimatedNumberBadge number={index + 1} />
                       <span className="pt-1">{texto}</span>
@@ -55,13 +58,26 @@ export function HeroSection() {
                   Um <span className="gradient-text-gold font-semibold">vidraceiro High Ticket</span>.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 items-start">
-                <a
-                  href="#oferta"
+              <div className="flex flex-col gap-4 items-start w-full max-w-md">
+                <button
+                  type="button"
+                  onClick={() => setColetaAberta((v) => !v)}
                   className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-background bg-gold hover:bg-gold-light transition-all duration-200 rounded-full shadow-lg shadow-black/20 hover:shadow-gold/30 uppercase tracking-wider w-full sm:w-auto"
                 >
-                  QUERO ENTRAR NA MENTORIA
-                </a>
+                  Participar gratuitamente
+                </button>
+                {coletaAberta && (
+                  <div className="w-full pt-2">
+                    <LeadForm
+                      idPrefix="hero-desktop"
+                      onSubmit={(data) => {
+                        console.log(data)
+                        setColetaAberta(false)
+                      }}
+                      submitLabel="Quero participar gratuitamente"
+                    />
+                  </div>
+                )}
                 <p className="text-muted text-[11px] md:text-xs uppercase tracking-wider">
                   Esquadria Milionária — Vagas limitadas
                 </p>
@@ -103,19 +119,27 @@ export function HeroSection() {
               </h1>
               <div className="text-muted text-sm md:text-base mb-8 leading-relaxed max-w-md mx-auto space-y-4 font-medium">
                 <p>Esse é o <span className="text-white font-semibold">vidraceiro travado</span>.</p>
-                <p>
-                  Mas existe outro tipo de profissional no mercado.
-                  Um que construiu algo completamente diferente.
-                  Um <span className="gradient-text-gold font-semibold">vidraceiro High Ticket</span>.
-                </p>
               </div>
-              <div className="flex flex-col gap-4 items-center">
-                <a
-                  href="#oferta"
+              <div className="flex flex-col gap-4 items-center w-full">
+                <button
+                  type="button"
+                  onClick={() => setColetaAberta((v) => !v)}
                   className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-background bg-gold hover:bg-gold-light transition-all duration-200 rounded-full shadow-lg shadow-black/20 hover:shadow-gold/30 uppercase tracking-wider w-full sm:w-auto"
                 >
-                  QUERO ENTRAR NA MENTORIA
-                </a>
+                  Participar gratuitamente
+                </button>
+                {coletaAberta && (
+                  <div className="w-full pt-2 max-w-sm">
+                    <LeadForm
+                      idPrefix="hero-mobile"
+                      onSubmit={(data) => {
+                        console.log(data)
+                        setColetaAberta(false)
+                      }}
+                      submitLabel="Quero participar gratuitamente"
+                    />
+                  </div>
+                )}
                 <p className="text-muted text-[11px] md:text-xs uppercase tracking-wider">
                   Esquadria Milionária — Vagas limitadas
                 </p>
@@ -125,17 +149,23 @@ export function HeroSection() {
           <div className="text-muted text-sm md:text-base mt-8 leading-relaxed max-w-md mx-auto space-y-4 font-medium">
             <p>Existe um tipo de vidraceiro que vive preso em um ciclo:</p>
             <ul className="space-y-4 pl-0 list-none">
-              {['trabalha o dia inteiro na obra', 'corre atrás de orçamento', 'negocia preço com cliente', 'resolve problema de equipe', 'e no final do mês… sobra pouco lucro.'].map((texto, index) => (
+              {['Trabalha o dia inteiro na obra', 'Corre atrás de orçamento', 'Negocia preço com cliente', 'Resolve problema de equipe', 'E no final do mês… sobra pouco lucro.'].map((texto, index) => (
                 <li key={texto} className="flex gap-4 items-start">
                   <AnimatedNumberBadge number={index + 1} />
                   <span className="pt-1">{texto}</span>
                 </li>
               ))}
             </ul>
+            <p>
+              Mas existe outro tipo de profissional no mercado.
+              Um que construiu algo completamente diferente.
+              Um <span className="gradient-text-gold font-semibold">vidraceiro High Ticket</span>.
+            </p>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent z-10" />
       </div>
+
     </section>
   )
 }
