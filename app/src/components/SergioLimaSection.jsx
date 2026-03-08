@@ -1,6 +1,5 @@
 const stats = [
-  { value: '15+', label: 'Anos de experiência' },
-  { value: '300+', label: 'Alunos mentorados' },
+  { value: '25+', label: 'Anos de experiência' },
   { value: '50M+', label: 'Faturamento gerado' },
 ]
 
@@ -14,16 +13,15 @@ export function SergioLimaSection() {
               <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-gold/20 via-gold-light/10 to-gold/20 blur-xl" />
               <div className="absolute -inset-3 rounded-full border border-gold/30" />
               <div className="absolute -inset-4 rounded-full border border-gold/10" />
-              <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full overflow-hidden border-2 border-gold/40">
-                <div className="w-full h-full bg-gradient-to-br from-surface-light via-surface to-surface-light flex items-center justify-center">
-                  <svg
-                    className="w-20 h-20 md:w-28 md:h-28 text-gold/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
-                </div>
+              <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full overflow-hidden border-2 border-gold/40 isolate">
+                <img
+                  src="/images/IMG_4691.JPEG"
+                  alt="Sérgio Lima"
+                  decoding="async"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover object-top"
+                  style={{ imageRendering: '-webkit-optimize-contrast', transform: 'translateZ(0)' }}
+                />
               </div>
             </div>
           </div>
@@ -33,7 +31,7 @@ export function SergioLimaSection() {
             </h2>
             <div className="space-y-4 text-muted text-sm md:text-base leading-relaxed">
               <p>
-                Empresário, mentor e especialista no mercado de esquadrias com mais de 15 anos de
+                Empresário, mentor e especialista no mercado de esquadrias com mais de 25 anos de
                 experiência no setor. Fundou e escalou sua própria empresa de esquadrias,
                 transformando um pequeno negócio local em uma referência regional.
               </p>
