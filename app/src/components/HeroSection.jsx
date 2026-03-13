@@ -65,7 +65,7 @@ export function HeroSection({ onSubmit }) {
                   />
                 </div>
                 <p className="text-muted text-[11px] md:text-xs uppercase tracking-wider">
-                  Esquadria Milionária — Vagas limitadas
+                  Esquadria Milionária · Vagas limitadas
                 </p>
               </div>
             </div>

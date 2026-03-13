@@ -14,8 +14,8 @@ export function ErroMedicosSection() {
               1
             </div>
             <p className="text-sm md:text-base text-muted leading-relaxed">
-              Tratar o site apenas como um cartão de visitas digital — com foto, mini bio, lista de
-              serviços e contato — sem construir uma narrativa de especialização.
+              Tratar o site apenas como um cartão de visitas digital, com foto, mini bio, lista de
+              serviços e contato, sem construir uma narrativa de especialização.
             </p>
           </li>
           <li className="flex items-start gap-4">
@@ -33,7 +33,7 @@ export function ErroMedicosSection() {
             </div>
             <p className="text-sm md:text-base text-muted leading-relaxed">
               Deixar espaço para que outro profissional, com melhor posicionamento digital, pareça mais
-              preparado — mesmo quando o nível técnico seja semelhante.
+              preparado, mesmo quando o nível técnico seja semelhante.
             </p>
           </li>
         </ul>

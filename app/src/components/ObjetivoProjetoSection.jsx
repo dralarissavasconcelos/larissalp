@@ -42,7 +42,7 @@ export function ObjetivoProjetoSection() {
             </div>
             <p className="text-sm md:text-base text-muted leading-relaxed">
               Fazer com que o site funcione como um <span className="text-foreground font-semibold">ativo estratégico</span> de
-              posicionamento e geração de pacientes qualificados — não apenas como um cartão de visitas.
+              posicionamento e geração de pacientes qualificados, e não apenas como um cartão de visitas.
             </p>
           </li>
         </ul>
