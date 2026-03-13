@@ -8,10 +8,6 @@ export function LogoSection() {
           className="w-full h-auto object-contain mx-auto"
           loading="lazy"
         />
-        <p className="mt-4 text-sm md:text-base text-muted leading-relaxed">
-          Transformação digital com tecnologia de ponta. Sistemas, automação e IA para empresas que
-          buscam inovação.
-        </p>
       </div>
     </section>
   )
