@@ -14,7 +14,7 @@ export function HeroOrcamento({ onSubmit }) {
   )
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col overflow-hidden bg-background">
+    <section className="relative w-full lg:min-h-screen flex flex-col overflow-hidden bg-background pb-10">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,var(--color-bronze)/8%,transparent)] pointer-events-none" />
 
       {/* Mobile: imagem full-width + card sobreposto */}
