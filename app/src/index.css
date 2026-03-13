@@ -47,6 +47,9 @@
     background-clip: text;
     animation: shimmer-bronze 2.4s ease-in-out infinite;
   }
+  .marquee-row {
+    animation: marquee 8s linear infinite;
+  }
 }
 
 @keyframes border-spin {
@@ -81,4 +84,13 @@ body {
 
 main {
   color: #fafafa;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
