@@ -1,10 +1,10 @@
 export function HeroOrcamento({ onSubmit }) {
-  const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=SEU_NUMERO_AQUI'
+  const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=557181959330'
 
   const headline = (
     <>
       Seu consultório merece um site que{' '}
-      <span className="text-bronze shimmer-bronze">transmite confiança</span>
+      <span className="text-bronze shimmer-bronze">transmita seu valor</span>
     </>
   )
   const bodyCopy = (
@@ -32,26 +32,9 @@ export function HeroOrcamento({ onSubmit }) {
             <h1 className="text-2xl font-bold text-foreground text-center leading-tight mb-3">
               {headline}
             </h1>
-            <p className="text-muted text-sm leading-relaxed mb-4">
+            <p className="text-muted text-sm leading-relaxed">
               {bodyCopy}
             </p>
-            <div className="mb-5 text-center">
-              <p className="text-sm text-muted line-through">R$ 4.500,00</p>
-              <p className="mt-1 text-xs text-muted uppercase tracking-[0.18em]">
-                Hoje por
-              </p>
-              <p className="text-xl font-semibold text-foreground">
-                R$ 2.800,00
-              </p>
-            </div>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 inline-flex w-full items-center justify-center rounded-xl bg-bronze px-6 py-3 text-sm font-semibold uppercase tracking-wide text-background transition-colors hover:bg-bronze-light"
-            >
-              Falar no WhatsApp
-            </a>
             </div>
           </div>
         </div>
@@ -69,21 +52,9 @@ export function HeroOrcamento({ onSubmit }) {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
               {headline}
             </h1>
-            <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-4">
+            <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-8">
               {bodyCopy}
             </p>
-            <div className="mb-6">
-              <p className="text-sm text-muted mb-1">
-                Um site com esse nível de cuidado normalmente sairia por
-              </p>
-              <p className="text-base text-muted line-through">R$ 4.500,00</p>
-              <p className="mt-1 text-xs text-muted uppercase tracking-[0.18em]">
-                Condição especial
-              </p>
-              <p className="text-3xl font-semibold text-foreground">
-                R$ 2.800,00
-              </p>
-            </div>
           </div>
           <div className="lg:pl-4">
             <a

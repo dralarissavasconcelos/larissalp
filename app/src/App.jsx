@@ -4,6 +4,10 @@ import {
   EmpresasSection,
   GarantiaSection,
   LogoSection,
+  MercadoBlefaroSection,
+  ErroMedicosSection,
+  ObjetivoProjetoSection,
+  OfertaFinalSection,
   FooterOrcamento,
 } from './components'
 import { submitOrcamento } from './services/orcamentos'
@@ -18,7 +22,11 @@ function App() {
       <HeroOrcamento onSubmit={handleOrcamentoSubmit} />
       <BeneficiosSite />
       <EmpresasSection />
+      <MercadoBlefaroSection />
+      <ErroMedicosSection />
+      <ObjetivoProjetoSection />
       <GarantiaSection />
+      <OfertaFinalSection />
       <LogoSection />
       <FooterOrcamento />
     </main>
