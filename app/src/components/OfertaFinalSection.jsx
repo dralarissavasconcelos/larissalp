@@ -17,7 +17,7 @@ export function OfertaFinalSection() {
         <div className="mb-6">
           <p className="text-sm text-muted line-through">R$ 4.500,00</p>
           <p className="text-3xl md:text-4xl font-semibold text-foreground mt-1">
-            R$ 2.800,00
+            R$ 3.000,00
           </p>
         </div>
         <a
