@@ -1,0 +1,23 @@
+{
+  "name": "menina-que-eu-nao-sei-o-nome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "audit-landing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idkafael/sergiolp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idkafael/sergiolp/issues"
+  },
+  "homepage": "https://github.com/idkafael/sergiolp#readme",
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}
