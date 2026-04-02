@@ -1,23 +1,72 @@
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="relative py-8 bg-background border-t border-surface-light/30 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer
+      style={{
+        background: 'var(--color-text)',
+        color: 'rgba(253,250,246,0.55)',
+        padding: '3rem 0 2.5rem',
+      }}
+    >
+      <div className="container">
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '1.5rem',
+          paddingBottom: '2rem',
+          borderBottom: '1px solid rgba(253,250,246,0.08)',
+        }}>
           <div>
-            <span className="text-sm font-bold tracking-wider">
-              <span className="text-white">ESQUADRIA</span>{' '}
-              <span className="gradient-text-gold">MILIONÁRIA</span>
-            </span>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'rgba(253,250,246,0.9)', letterSpacing: '-0.01em' }}>
+              Dra. Larissa Pinheiro
+            </div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-nude)', fontWeight: 500, marginTop: '2px' }}>
+              Especialista em Blefaroplastia · CRM-SP
+            </div>
           </div>
-          <p className="text-muted text-xs text-center">© 2026 Sérgio Lima. Todos os direitos reservados.</p>
-          <div className="flex items-center gap-4">
-            <a href="#" className="text-muted text-xs hover:text-gold transition-colors">
-              Termos de Uso
-            </a>
-            <a href="#" className="text-muted text-xs hover:text-gold transition-colors">
-              Política de Privacidade
-            </a>
-          </div>
+
+          <nav style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+            {[
+              ['Procedimento', '#tecnica'],
+              ['Jornada', '#jornada'],
+              ['Sobre', '#autoridade'],
+              ['FAQ', '#faq'],
+              ['Agendar', '#captacao'],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.8125rem',
+                  fontWeight: 300,
+                  color: 'rgba(253,250,246,0.55)',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = 'rgba(253,250,246,0.9)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(253,250,246,0.55)'}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginTop: '1.5rem',
+          flexWrap: 'wrap',
+          gap: '0.75rem',
+        }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 300 }}>
+            © {new Date().getFullYear()} Dra. Larissa Pinheiro. Todos os direitos reservados.
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 300 }}>
+            CFM · SBCP · Membro Titular de Cirurgia Plástica
+          </p>
         </div>
       </div>
     </footer>

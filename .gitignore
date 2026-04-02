@@ -3,3 +3,9 @@ dist
 *.log
 .env
 .env.local
+
+# cópia de trabalho local (fonte publicada em app/)
+blefaroplastia-lp/
+.agents/
+skills-lock.json
+package-lock.workspace.json.bak

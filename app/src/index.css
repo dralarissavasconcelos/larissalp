@@ -1,96 +1,276 @@
-@import "tailwindcss";
+/* ===================================================
+   DESIGN SYSTEM — Blefaroplastia Premium
+   Paleta: off-white · bege · mocha · nude/champagne
+   Tipografia: Cormorant Garamond (display) + Outfit (body)
+=================================================== */
 
-@theme {
-  --color-background: #0a0a0a;
-  --color-foreground: #fafafa;
-  --color-surface: #141414;
-  --color-surface-light: #1a1a1a;
-  --color-gold: #D4A520;
-  --color-gold-light: #F5D060;
-  --color-mustard: #EAA800;
-  --color-muted: #e0e0e0;
-  /* Paleta LP orçamento (bege/bronze da referência) */
-  --color-bronze: #b8956b;
-  --color-bronze-light: #d4b896;
-  --color-sand: #9a7b5a;
+:root {
+  /* --- Colors --- */
+  --color-bg:         #FDFAF6;
+  --color-bg-muted:   #F5EFE8;
+  --color-bg-card:    #FBF7F2;
+  --color-bege:       #E8E0D5;
+  --color-bege-light: #F0EAE1;
+  --color-mocha:      #8C7B6E;
+  --color-mocha-dark: #6B5C51;
+  --color-text:       #3D3530;
+  --color-text-muted: #7A6E66;
+  --color-text-soft:  #A99E96;
+  --color-nude:       #C9B8A8;
+  --color-nude-light: #DDD0C4;
+  --color-white:      #FFFFFF;
+  --color-border:     rgba(140, 123, 110, 0.15);
+  --color-border-soft:rgba(140, 123, 110, 0.08);
+
+  /* --- Typography --- */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+
+  /* --- Spacing --- */
+  --section-py:   clamp(5rem, 10vw, 9rem);
+  --container-px: clamp(1.25rem, 5vw, 3rem);
+  --gap-card:     1.5rem;
+
+  /* --- Radius --- */
+  --radius-sm:     0.75rem;
+  --radius-md:     1.25rem;
+  --radius-card:   2rem;
+  --radius-pill:   9999px;
+
+  /* --- Shadows --- */
+  --shadow-soft:   0 4px 32px -4px rgba(61, 53, 48, 0.08);
+  --shadow-card:   0 8px 40px -8px rgba(61, 53, 48, 0.10);
+  --shadow-hover:  0 16px 48px -12px rgba(61, 53, 48, 0.14);
+
+  /* --- Transitions --- */
+  --ease-spring:   cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-elegant:  cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 300ms;
+  --duration-med:  500ms;
+  --duration-slow: 700ms;
 }
 
-@layer utilities {
-  .gradient-text-gold {
-    background: linear-gradient(135deg, #D4A520 0%, #F5D060 50%, #EAA800 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .glow-gold {
-    box-shadow: 0 0 20px rgba(212, 165, 32, 0.3);
-  }
-  .glow-gold-sm {
-    box-shadow: 0 0 10px rgba(212, 165, 32, 0.2);
-  }
-  .animate-border-spin {
-    animation: border-spin 4s linear infinite;
-  }
-  .underline-gold {
-    display: inline-block;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #D4A520;
-  }
-  .shimmer-bronze {
-    position: relative;
-    display: inline-block;
-    color: var(--color-bronze);
-    background: linear-gradient(120deg, rgba(184,149,107,0.2), var(--color-bronze-light), rgba(184,149,107,0.2));
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer-bronze 2.4s ease-in-out infinite;
-  }
-  .marquee-row {
-    animation: marquee 8s linear infinite;
-  }
-}
-
-@keyframes border-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes shimmer-bronze {
-  0% {
-    background-position: -60% 0;
-  }
-  45% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 160% 0;
-  }
+/* === RESET & BASE === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #0a0a0a;
-  color: #fafafa;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  color: #fafafa;
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* === TYPOGRAPHY SYSTEM === */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.label-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-mocha);
+}
+
+/* === LAYOUT === */
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+/* === BUTTONS === */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: var(--color-text);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--duration-med) var(--ease-elegant);
+  will-change: transform;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-mocha-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.98) translateY(0);
+}
+
+.btn-primary .arrow-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-fast) var(--ease-elegant);
+}
+
+.btn-primary:hover .arrow-icon {
+  transform: translate(2px, -1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all var(--duration-fast) var(--ease-elegant);
+}
+
+.btn-ghost:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-border);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: #2D6A4F;
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--duration-med) var(--ease-elegant);
+  will-change: transform;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1B4332;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -4px rgba(45,106,79,0.35);
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.98);
+}
+
+/* === EYEBROW PILL === */
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: var(--color-bege-light);
+  border: 1px solid var(--color-border);
+  color: var(--color-mocha);
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-pill);
+}
+
+/* === DOUBLE BEZEL CARD === */
+.card-shell {
+  background: var(--color-bege-light);
+  border: 1px solid var(--color-border-soft);
+  padding: 3px;
+  border-radius: var(--radius-card);
+}
+
+.card-inner {
+  background: var(--color-bg-card);
+  border-radius: calc(var(--radius-card) - 3px);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.7);
+  overflow: hidden;
+}
+
+/* === DIVIDER === */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border) 30%, var(--color-border) 70%, transparent);
+}
+
+/* === SMOOTH SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-muted);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-nude);
+  border-radius: 3px;
 }

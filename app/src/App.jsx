@@ -1,36 +1,31 @@
-import {
-  HeroOrcamento,
-  BeneficiosSite,
-  EmpresasSection,
-  GarantiaSection,
-  LogoSection,
-  MercadoBlefaroSection,
-  ErroMedicosSection,
-  ObjetivoProjetoSection,
-  OfertaFinalSection,
-  FooterOrcamento,
-} from './components'
-import { submitOrcamento } from './services/orcamentos'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Beneficios from './components/Beneficios'
+import Tecnica from './components/Tecnica'
+import Jornada from './components/Jornada'
+import CasosClinicosSection from './components/CasosClinicosSection'
+import AutoridadeMedica from './components/AutoridadeMedica'
+import FAQ from './components/FAQ'
+import Captacao from './components/Captacao'
+import Footer from './components/Footer'
+import WhatsAppFAB from './components/WhatsAppFAB'
 
-function App() {
-  async function handleOrcamentoSubmit(data) {
-    return submitOrcamento(data)
-  }
-
+export default function App() {
   return (
-    <main className="min-h-screen bg-background overflow-hidden">
-      <HeroOrcamento onSubmit={handleOrcamentoSubmit} />
-      <BeneficiosSite />
-      <EmpresasSection />
-      <MercadoBlefaroSection />
-      <ErroMedicosSection />
-      <ObjetivoProjetoSection />
-      <GarantiaSection />
-      <OfertaFinalSection />
-      <LogoSection />
-      <FooterOrcamento />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Beneficios />
+        <Tecnica />
+        <Jornada />
+        <CasosClinicosSection />
+        <AutoridadeMedica />
+        <FAQ />
+        <Captacao />
+      </main>
+      <Footer />
+      <WhatsAppFAB />
+    </>
   )
 }
-
-export default App
