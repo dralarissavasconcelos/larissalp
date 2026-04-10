@@ -5,11 +5,11 @@ import { Plus, Minus } from '@phosphor-icons/react'
 const faqs = [
   {
     q: 'Como saber se a blefaroplastia é indicada para mim?',
-    a: 'A indicação é feita na consulta de avaliação, onde analisamos a anatomia das suas pálpebras, a qualidade da pele, a estrutura óssea e o que você deseja melhorar. Há casos em que o excesso de pele compromete a visão periférica — nesses casos, a cirurgia tem indicação funcional além da estética.',
+    a: 'A indicação é feita na consulta de avaliação, onde analisamos a anatomia das suas pálpebras, a qualidade da pele, a estrutura óssea e o que você deseja melhorar. Há casos em que o excesso de pele compromete a visão periférica; nesses casos, a cirurgia tem indicação funcional além da estética.',
   },
   {
     q: 'A blefaroplastia deixa o rosto com aparência artificial?',
-    a: 'Não, quando bem indicada e realizada. O objetivo do procedimento é restituir a aparência natural e descansada do olhar — não criar um olhar diferente. O resultado deve ser indistinguível de uma aparência natural mais jovem.',
+    a: 'Não, quando bem indicada e realizada. O objetivo do procedimento é restituir a aparência natural e descansada do olhar, sem criar um olhar diferente. O resultado deve ser indistinguível de uma aparência natural mais jovem.',
   },
   {
     q: 'Como é o pós-operatório?',
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'Quando vejo os resultados definitivos?',
-    a: 'Os principais resultados já são visíveis a partir de 3 a 4 semanas. O resultado definitivo — com a resolução total do edema e o amadurecimento das cicatrizes — se consolida entre 2 e 3 meses após a cirurgia.',
+    a: 'Os principais resultados já são visíveis a partir de 3 a 4 semanas. O resultado definitivo, com a resolução total do edema e o amadurecimento das cicatrizes, se consolida entre 2 e 3 meses após a cirurgia.',
   },
   {
     q: 'A blefaroplastia corrige as bolsas abaixo dos olhos?',
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'Toda pálpebra caída precisa de cirurgia?',
-    a: 'Não necessariamente. Há casos em que o aspecto de pálpebra caída é causado por ptose do supercílio — que pode ser tratado com outros procedimentos. A avaliação presencial é fundamental para determinar a melhor abordagem para cada caso específico.',
+    a: 'Não necessariamente. Há casos em que o aspecto de pálpebra caída é causado por ptose do supercílio, que pode ser tratado com outros procedimentos. A avaliação presencial é fundamental para determinar a melhor abordagem para cada caso específico.',
   },
 ]
 

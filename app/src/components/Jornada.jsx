@@ -12,7 +12,7 @@ const steps = [
     num: '02',
     label: 'Indicação',
     title: 'Planejamento personalizado',
-    desc: 'Definição da técnica mais adequada para cada olhar — superior, inferior ou combinada — com simulação do resultado.',
+    desc: 'Definição da técnica mais adequada para cada olhar (superior, inferior ou combinada), com simulação do resultado.',
   },
   {
     num: '03',

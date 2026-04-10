@@ -14,7 +14,7 @@ const cases = [
     label: 'Caso Clínico',
     tag: 'Blefaroplastia Superior Bilateral',
     note: 'Paciente com excesso de pele palpebral bilateral causando aspecto de cansaço e assimetria. Realizada blefaroplastia superior com ressecção conservadora e incisão na dobra palpebral natural. Resultado com naturalidade e abertura do olhar.',
-    result: 'Resultado real — pós-operatório',
+    result: 'Resultado real, pós-operatório',
   },
   {
     id: 'caso-02',
@@ -23,7 +23,7 @@ const cases = [
     label: 'Caso Clínico',
     tag: 'Blefaroplastia Superior Bilateral',
     note: 'Paciente com ptose palpebral superior bilateral e excesso de pele causando sensação de olhar pesado. Blefaroplastia superior realizada com técnica conservadora respeitando a expressão natural do olhar.',
-    result: 'Resultado real — pós-operatório',
+    result: 'Resultado real, pós-operatório',
   },
 ]
 
@@ -49,7 +49,7 @@ function PhotoSlot({ src, label, tag }) {
           {src && (
             <img
               src={src}
-              alt={`${label} — ${tag}`}
+              alt={`${label}, ${tag}`}
               style={{
                 position: 'absolute',
                 inset: 0,

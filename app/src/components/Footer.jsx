@@ -22,7 +22,7 @@ export default function Footer() {
               Dra. Larissa Pinheiro
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-nude)', fontWeight: 500, marginTop: '2px' }}>
-              Especialista em Blefaroplastia · CRM-SP
+              Especialista em Blefaroplastia, CRM-SP
             </div>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Dra. Larissa Pinheiro. Todos os direitos reservados.
           </p>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 300 }}>
-            CFM · SBCP · Membro Titular de Cirurgia Plástica
+            CFM, SBCP, membro titular de cirurgia plástica
           </p>
         </div>
       </div>

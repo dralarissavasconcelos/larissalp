@@ -118,7 +118,7 @@ export default function Beneficios() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.7, marginTop: '1rem', maxWidth: '50ch' }}
           >
-            A blefaroplastia não transforma o rosto — ela devolve ao olhar a
+            A blefaroplastia não transforma o rosto: ela devolve ao olhar a
             leveza que o tempo foi retirando.
           </motion.p>
         </div>

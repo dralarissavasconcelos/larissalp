@@ -47,7 +47,7 @@ export default function Hero() {
             <motion.div {...fadeUp(0.1)}>
               <span className="eyebrow-pill">
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--color-mocha)', display: 'inline-block' }} />
-                Blefaroplastia · Cirurgia de Pálpebras
+                Blefaroplastia, cirurgia de pálpebras
               </span>
             </motion.div>
 
@@ -74,7 +74,7 @@ export default function Hero() {
               }}
             >
               Especialista em blefaroplastia com foco em resultados naturais. 
-              Cada avaliação é um olhar único — preciso, individualizado e humano.
+              Cada avaliação é um olhar único, preciso, individualizado e humano.
             </motion.p>
 
             <motion.div {...fadeUp(0.48)} style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
@@ -149,7 +149,7 @@ export default function Hero() {
               >
                 <img
                   src="/images/prof.png"
-                  alt="Dra. Larissa Pinheiro — Especialista em Blefaroplastia"
+                  alt="Dra. Larissa Pinheiro, especialista em blefaroplastia"
                   style={{
                     position: 'absolute',
                     inset: 0,

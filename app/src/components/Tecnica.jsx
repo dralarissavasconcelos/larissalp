@@ -6,13 +6,13 @@ const blocks = [
   {
     tag: 'O que é',
     title: 'Cirurgia de precisão no olhar',
-    text: 'A blefaroplastia é um procedimento cirúrgico que atua sobre as pálpebras — superiores, inferiores ou ambas — removendo ou reposicionando o excesso de pele, músculo e gordura que se acumula com o tempo. O resultado é um olhar mais descansado, harmônico e jovial, sem alterar a expressão natural do rosto.',
+    text: 'A blefaroplastia é um procedimento cirúrgico que atua sobre as pálpebras superiores, inferiores ou ambas, removendo ou reposicionando o excesso de pele, músculo e gordura que se acumula com o tempo. O resultado é um olhar mais descansado, harmônico e jovial, sem alterar a expressão natural do rosto.',
     checks: ['Procedimento ambulatorial', 'Anestesia local com sedação', 'Cicatriz discreta e imperceptível'],
   },
   {
     tag: 'Pálpebra Superior',
     title: 'Quando a pele pesa sobre o olhar',
-    text: 'Com o envelhecimento, a pele da pálpebra superior perde elasticidade e começa a cair sobre o olho — criando a sensação visual de cansaço e até reduzindo o campo de visão em casos mais avançados. A blefaroplastia superior remove esse excesso com precisão, reestabelecendo o contorno natural do olho.',
+    text: 'Com o envelhecimento, a pele da pálpebra superior perde elasticidade e começa a cair sobre o olho, o que cria a sensação visual de cansaço e pode reduzir o campo de visão em casos mais avançados. A blefaroplastia superior remove esse excesso com precisão, reestabelecendo o contorno natural do olho.',
     checks: ['Indicada para excesso de pele palpebral', 'Melhora visual e estética simultâneas', 'Recuperação rápida'],
   },
   {
@@ -24,7 +24,7 @@ const blocks = [
   {
     tag: 'Avaliação',
     title: 'Cada olhar é único',
-    text: 'Antes de qualquer decisão cirúrgica, realizamos uma avaliação completa e individualizada. Analisamos a anatomia das pálpebras, a estrutura óssea, a qualidade da pele e os objetivos reais da paciente. O planejamento cirúrgico é traçado para cada rosto — nunca um protocolo genérico.',
+    text: 'Antes de qualquer decisão cirúrgica, realizamos uma avaliação completa e individualizada. Analisamos a anatomia das pálpebras, a estrutura óssea, a qualidade da pele e os objetivos reais da paciente. O planejamento cirúrgico é feito para cada rosto, sem protocolo genérico.',
     checks: ['Avaliação presencial completa', 'Fotografia clínica padronizada', 'Planejamento cirúrgico personalizado'],
   },
 ]

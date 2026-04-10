@@ -4,8 +4,8 @@ import { Medal, GraduationCap, Stethoscope, Heart } from '@phosphor-icons/react'
 import imgDoutora from '../assets/quem é.jpg'
 
 const credentials = [
-  { icon: GraduationCap, label: 'Formação', value: 'Medicina — USP · Faculdade de Medicina de São Paulo' },
-  { icon: Medal, label: 'Especialização', value: 'Cirurgia Plástica — Residência no Hospital das Clínicas (HCFMUSP)' },
+  { icon: GraduationCap, label: 'Formação', value: 'Medicina, USP, Faculdade de Medicina de São Paulo' },
+  { icon: Medal, label: 'Especialização', value: 'Cirurgia Plástica, residência no Hospital das Clínicas (HCFMUSP)' },
   { icon: Stethoscope, label: 'Titulação', value: 'Membro Titular da Sociedade Brasileira de Cirurgia Plástica (SBCP)' },
   { icon: Heart, label: 'Foco clínico', value: 'Blefaroplastia e cirurgia de rejuvenescimento facial com ênfase em naturalidade' },
 ]
@@ -57,7 +57,7 @@ export default function AutoridadeMedica() {
               >
                 <img
                   src={imgDoutora}
-                  alt="Dra. Larissa Pinheiro — Especialista em Blefaroplastia"
+                  alt="Dra. Larissa Pinheiro, especialista em blefaroplastia"
                   style={{
                     position: 'absolute',
                     inset: 0,
@@ -87,7 +87,7 @@ export default function AutoridadeMedica() {
               </h2>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.75, marginTop: '1rem', maxWidth: '48ch' }}>
                 Com mais de uma década dedicada exclusivamente à cirurgia de pálpebras,
-                a Dra. Larissa desenvolveu uma visão refinada sobre o que torna cada olhar único —
+                a Dra. Larissa desenvolveu uma visão refinada sobre o que torna cada olhar único
                 e como a técnica cirúrgica pode servir à individualidade de cada paciente.
               </p>
             </div>
