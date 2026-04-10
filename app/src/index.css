@@ -25,6 +25,8 @@
   /* --- Typography --- */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Outfit', system-ui, sans-serif;
+  /* Números / métricas: sans limpo, alinhamento tabular */
+  --font-numeric: 'Outfit', system-ui, -apple-system, sans-serif;
 
   /* --- Spacing --- */
   --section-py:   clamp(5rem, 10vw, 9rem);
@@ -128,6 +130,12 @@ button {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-mocha);
+}
+
+.font-numeric {
+  font-family: var(--font-numeric);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
 }
 
 /* === LAYOUT === */

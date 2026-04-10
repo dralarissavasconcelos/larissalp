@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Play } from '@phosphor-icons/react'
-import imgHero from '../assets/olharquesempre.jpg'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28, filter: 'blur(4px)' },
@@ -110,7 +109,7 @@ export default function Hero() {
                 { num: '100%', label: 'Foco em pálpebras' },
               ].map(stat => (
                 <div key={stat.label}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 500, color: 'var(--color-text)', lineHeight: 1 }}>
+                  <div className="font-numeric" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--color-text)', lineHeight: 1 }}>
                     {stat.num}
                   </div>
                   <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-soft)', marginTop: '0.25rem', letterSpacing: '0.02em' }}>
@@ -149,7 +148,7 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src={imgHero}
+                  src="/images/prof.png"
                   alt="Dra. Larissa Pinheiro — Especialista em Blefaroplastia"
                   style={{
                     position: 'absolute',
@@ -157,7 +156,7 @@ export default function Hero() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'top',
+                    objectPosition: 'center top',
                   }}
                 />
               </div>

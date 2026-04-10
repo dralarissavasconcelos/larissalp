@@ -72,13 +72,13 @@ function StepCard({ step, index }) {
       }}
     >
       {/* Big number background */}
-      <div style={{
+      <div className="font-numeric" style={{
         position: 'absolute',
         top: '-0.5rem',
         right: '1rem',
-        fontFamily: 'var(--font-display)',
         fontSize: '5rem',
-        fontWeight: 300,
+        fontWeight: 500,
+        letterSpacing: '-0.04em',
         color: 'var(--color-bege)',
         lineHeight: 1,
         userSelect: 'none',

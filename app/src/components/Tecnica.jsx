@@ -90,10 +90,10 @@ function TechBlock({ block, index }) {
             inset: 0,
             background: `radial-gradient(ellipse 60% 60% at ${isEven ? '70% 30%' : '30% 70%'}, rgba(201,184,168,0.3) 0%, transparent 70%)`,
           }} />
-          <span style={{
-            fontFamily: 'var(--font-display)',
+          <span className="font-numeric" style={{
             fontSize: 'clamp(5rem, 10vw, 9rem)',
-            fontWeight: 300,
+            fontWeight: 500,
+            letterSpacing: '-0.04em',
             color: 'var(--color-nude)',
             lineHeight: 1,
             opacity: 0.6,
