@@ -9,6 +9,7 @@ import Tecnica from './components/Tecnica'
 import Jornada from './components/Jornada'
 import ProcedimentosSection from './components/ProcedimentosSection'
 import CasosClinicosSection from './components/CasosClinicosSection'
+import EstruturaSection from './components/EstruturaSection'
 import DepoimentosGoogleSection from './components/DepoimentosGoogleSection'
 import AutoridadeMedica from './components/AutoridadeMedica'
 import FAQ from './components/FAQ'
@@ -41,6 +42,7 @@ export default function App() {
         <Jornada />
         <ProcedimentosSection navigate={navigate} />
         <CasosClinicosSection />
+        <EstruturaSection />
         <DepoimentosGoogleSection />
         <AutoridadeMedica />
         <FAQ />

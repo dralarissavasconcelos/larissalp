@@ -3,40 +3,48 @@ import { motion, useInView } from 'framer-motion'
 import { Star, ArrowRight } from '@phosphor-icons/react'
 
 // ─── Atualize a URL com o link do perfil Google da Dra. Larissa ──────────────
-const GOOGLE_PERFIL_URL = '#'
+const GOOGLE_PERFIL_URL = 'https://share.google/sEZwMgOAWG3L7xTPq'
 
 const reviews = [
   {
-    name: 'Ana Paula M.',
+    name: 'Kíria Canário',
     nota: 5,
-    data: 'Março de 2025',
+    data: '1 mês atrás',
     texto:
-      'Fiz a blefaroplastia superior com a Dra. Larissa e o resultado superou todas as expectativas. O atendimento foi acolhedor desde a primeira consulta, e a recuperação foi muito mais tranquila do que eu imaginava. Olhar completamente renovado!',
-    foto: 'AP',
+      'Passar por um procedimento estético vai muito além da transformação externa. Se trata de carinho, cuidado e atenção que encontrei desde o primeiro momento em que fui atendida (por WhatsApp) pela equipe da Dra. Larissa. Sou muito grata por Deus ter colocado vocês no meu caminho e ter podido realizar um sonho que nem eu sabia que existia. Muito obrigada a Dra. Larissa e sua equipe incrível (Jô, Alan e Mirele)! Mesmo nos momentos de ansiedade, vocês fizeram com que essa caminhada fosse mais tranquila. Que Deus abençoe a todos! 💗',
+    foto: 'KC',
   },
   {
-    name: 'Renata S.',
+    name: 'Ana Estrela',
     nota: 5,
-    data: 'Janeiro de 2025',
+    data: '5 meses atrás',
     texto:
-      'Profissional extremamente competente e humana. Ela explicou cada etapa do procedimento de correção de ptose com clareza. Resultado natural, exatamente o que eu queria. Recomendo sem hesitar.',
-    foto: 'RS',
+      'Minha experiência foi maravilhosa, estava com um pouco de medo mais a cirurgia foi tranquila não senti dor a recuperação excelente. Dr. Larissa uma Ecelente Médica atenciosa mim passou confiança logo na primeira consulta, muito dedicada, fui bem atendida, acolhida por ela e toda sua equipe todos de Parabéns. Aquele olhar triste hoje não tem mais muito felizzz com o resultado. Só gratidão a Deus por tudo . Obrigada Dr. Larissa ❤️❤️ 👏👏👏👏 Deus abençoe!! Muitas bênçãos.',
+    foto: 'AE',
   },
   {
-    name: 'Cláudia F.',
+    name: 'Ana Lucia Guimarães',
     nota: 5,
-    data: 'Novembro de 2024',
+    data: '1 mês atrás',
     texto:
-      'Fiz o lifting de supercílios e a diferença foi incrível. Meu rosto ficou mais jovem sem parecer que "fiz alguma coisa". A Dra. Larissa tem um olhar artístico e cirúrgico ao mesmo tempo. Estou muito satisfeita.',
-    foto: 'CF',
+      'A minha experiência foi maravilhosa !!! A dedicação e atenção da dra Larissa é surreal. O acompanhamento dela faz com que não tenhamos medo do pós operatório. O resultado fantástico .',
+    foto: 'AG',
   },
   {
-    name: 'Mariana L.',
+    name: 'Thiele Tolentino',
     nota: 5,
-    data: 'Outubro de 2024',
+    data: '5 meses atrás',
     texto:
-      'Pesquisei muito antes de escolher minha cirurgiã. A Dra. Larissa foi a que transmitiu mais segurança e transparência. A blefaroplastia inferior eliminou as bolsas que me incomodavam há anos. Resultado impecável.',
-    foto: 'ML',
+      'Dra Larissa é uma profissional e pessoa incrível! Desde o primeiro contato me passou muita confiança. O cuidado e atenção dela em todas as etapas do processo fizeram a diferença. Tanto ela como toda a sua equipe são muito acolhedores. Estou amando o resultado e indico com toda certeza!',
+    foto: 'TT',
+  },
+  {
+    name: 'Maria José Da Silva',
+    nota: 5,
+    data: '2 meses atrás',
+    texto:
+      'Dra. Larissa uma excelente medica. Trata os pacientes com toda atenção, respeito. Minha cirurgia realizada por ela foi otima, tive uma recuperação maravilhosa.',
+    foto: 'MS',
   },
 ]
 

@@ -9,8 +9,6 @@ const SLIDES = DEPOIMENTOS_FILENAMES.map((filename, index) => ({
   filename,
 }))
 
-const overlayGradient =
-  'linear-gradient(to top, rgba(61,53,48,0.55) 0%, rgba(61,53,48,0.1) 22%, transparent 40%)'
 
 function ReelSlide({ slide, isActive, slideRef }) {
   return (
@@ -22,65 +20,62 @@ function ReelSlide({ slide, isActive, slideRef }) {
         flex: '0 0 auto',
         width: 'min(86vw, 520px)',
         maxWidth: '100%',
-        height: 'min(72dvh, 640px)',
-        minHeight: '380px',
         scrollSnapAlign: 'center',
         scrollSnapStop: 'normal',
         borderRadius: 'var(--radius-card)',
         overflow: 'hidden',
         background: 'var(--color-text)',
         boxShadow: 'var(--shadow-card)',
+        /* Altura se adapta à imagem — sem corte */
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <img
         src={slide.src}
         alt={`Caso clínico, foto ${slide.filename}`}
         style={{
-          position: 'absolute',
-          inset: 0,
           width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center top',
+          height: 'auto',
+          display: 'block',
+          maxHeight: 'min(72dvh, 680px)',
+          objectFit: 'contain',
         }}
         loading={isActive ? 'eager' : 'lazy'}
         decoding="async"
       />
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: overlayGradient,
-          pointerEvents: 'none',
-        }}
-      />
+      {/* Tags sobrepostas no canto inferior esquerdo */}
       <div
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
           bottom: 0,
-          padding: 'clamp(0.5rem, 2vw, 0.75rem)',
+          padding: '0.625rem 0.75rem',
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
           gap: '0.5rem',
+          background: 'linear-gradient(to top, rgba(61,53,48,0.5) 0%, transparent 100%)',
+          pointerEvents: 'none',
         }}
       >
-        <span className="eyebrow-pill" style={{ width: 'fit-content', background: 'rgba(253,250,246,0.92)', color: 'var(--color-text)', fontSize: '0.65rem', padding: '0.2rem 0.6rem' }}>
+        <span className="eyebrow-pill" style={{
+          background: 'rgba(253,250,246,0.92)',
+          color: 'var(--color-text)',
+          fontSize: '0.62rem',
+          padding: '0.2rem 0.65rem',
+        }}>
           Caso clínico
         </span>
-        <span
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.625rem',
-            fontWeight: 500,
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            color: 'rgba(253,250,246,0.85)',
-          }}
-        >
+        <span style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.625rem',
+          fontWeight: 500,
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          color: 'rgba(253,250,246,0.9)',
+        }}>
           Blefaroplastia
         </span>
       </div>
@@ -90,11 +85,11 @@ function ReelSlide({ slide, isActive, slideRef }) {
 
 const navBtn = (side) => ({
   position: 'absolute',
-  top: '50%',
+  top: 'calc(50% - 20px)', // compensa a altura da legenda abaixo
   transform: 'translateY(-50%)',
   zIndex: 3,
-  width: '48px',
-  height: '48px',
+  width: '44px',
+  height: '44px',
   borderRadius: '50%',
   display: 'flex',
   alignItems: 'center',
@@ -267,6 +262,7 @@ export default function CasosClinicosSection() {
 
           <div
             ref={scrollRef}
+            className="casos-scroll"
             tabIndex={0}
             role="region"
             aria-roledescription="carrossel"
@@ -283,13 +279,14 @@ export default function CasosClinicosSection() {
               scrollBehavior: 'smooth',
               WebkitOverflowScrolling: 'touch',
               overscrollBehaviorX: 'contain',
-              scrollbarWidth: 'thin',
+              scrollbarWidth: 'none',
               paddingTop: '4px',
-              paddingBottom: '8px',
+              paddingBottom: '0px',
               paddingLeft: 'max(12px, calc(50% - min(43vw, 260px)))',
               paddingRight: 'max(12px, calc(50% - min(43vw, 260px)))',
               outline: 'none',
               borderRadius: 'calc(var(--radius-card) - 8px)',
+              msOverflowStyle: 'none', /* IE */
             }}
           >
             {SLIDES.map((slide, i) => (
@@ -324,6 +321,10 @@ export default function CasosClinicosSection() {
             </div>
           </div>
         </div>
+
+        <style>{`
+          .casos-scroll::-webkit-scrollbar { display: none; }
+        `}</style>
 
         <p
           style={{
