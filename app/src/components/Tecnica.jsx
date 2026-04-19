@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { CheckCircle } from '@phosphor-icons/react'
+import { depoimentoSrc } from '../data/depoimentosImages'
 
 const blocks = [
   {
@@ -8,24 +9,32 @@ const blocks = [
     title: 'Cirurgia de precisão no olhar',
     text: 'A blefaroplastia é um procedimento cirúrgico que atua sobre as pálpebras superiores, inferiores ou ambas, removendo ou reposicionando o excesso de pele, músculo e gordura que se acumula com o tempo. O resultado é um olhar mais descansado, harmônico e jovial, sem alterar a expressão natural do rosto.',
     checks: ['Cirurgia realizada com segurança em Day Hospital', 'Anestesia local com sedação', 'Cicatriz discreta e camuflada nas dobras naturais dos olhos'],
+    imageUrl: 'https://i.imgur.com/RwjSrE2.jpg',
+    imageAlt: 'Referência visual: o que é blefaroplastia',
   },
   {
     tag: 'Pálpebra Superior',
     title: 'Quando a pele pesa sobre o olhar',
     text: 'Com o envelhecimento, a pele da pálpebra superior perde elasticidade e começa a cair sobre o olho, o que cria a sensação visual de cansaço e pode reduzir o campo de visão em casos mais avançados. A blefaroplastia superior remove esse excesso com precisão, reestabelecendo o contorno natural do olho.',
     checks: ['Indicada para excesso de pele palpebral', 'Melhora visual e estética simultâneas', 'Recuperação rápida'],
+    imageUrl: 'https://i.imgur.com/xTGFNvI.jpg',
+    imageAlt: 'Referência visual: blefaroplastia da pálpebra superior',
   },
   {
     tag: 'Pálpebra Inferior',
     title: 'Bolsas que envelhecem o olhar',
     text: 'As bolsas inferiores promovem um aspecto de cansaço. Elas surgem quando a gordura natural da órbita ocular se projeta para frente, perdendo o suporte dos tecidos. A blefaroplastia inferior reposiciona ou remove essas bolsas com sutileza, eliminando o aspecto de cansaço crônico sem criar um resultado artificial.',
     checks: ['Cicatriz discreta abaixo dos cílios ou sem cicatriz (via transconjutival)', 'Resultado natural e duradouro', 'Combinável com outras técnicas'],
+    imageUrl: depoimentoSrc('20250808_155104000_iOS.jpg'),
+    imageAlt: 'Caso clínico, foto 20250808_155104000_iOS, blefaroplastia',
   },
   {
     tag: 'Avaliação',
     title: 'Cada olhar é único',
     text: 'Antes de qualquer decisão cirúrgica, realizamos uma avaliação completa e individualizada. Analisamos a anatomia das pálpebras, a estrutura óssea, a qualidade da pele e os objetivos reais da paciente. O planejamento cirúrgico é feito para cada rosto, sem protocolo genérico.',
     checks: ['Avaliação presencial completa', 'Fotografia clínica padronizada', 'Planejamento cirúrgico personalizado'],
+    imageUrl: 'https://i.imgur.com/pBh5rKL.jpg',
+    imageAlt: 'Referência visual: avaliação e planejamento do olhar',
   },
 ]
 
@@ -74,10 +83,10 @@ function TechBlock({ block, index }) {
       {/* Visual accent */}
       <div style={{ order: isEven ? 2 : 1 }} className="tech-visual">
         <div style={{
-          background: 'var(--color-bege-light)',
+          background: block.imageUrl ? 'var(--color-text)' : 'var(--color-bege-light)',
           border: '1px solid var(--color-border)',
           borderRadius: 'var(--radius-card)',
-          padding: '2.5rem',
+          padding: block.imageUrl ? 0 : '2.5rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -85,23 +94,43 @@ function TechBlock({ block, index }) {
           position: 'relative',
           overflow: 'hidden',
         }}>
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: `radial-gradient(ellipse 60% 60% at ${isEven ? '70% 30%' : '30% 70%'}, rgba(201,184,168,0.3) 0%, transparent 70%)`,
-          }} />
-          <span className="font-numeric" style={{
-            fontSize: 'clamp(5rem, 10vw, 9rem)',
-            fontWeight: 500,
-            letterSpacing: '-0.04em',
-            color: 'var(--color-nude)',
-            lineHeight: 1,
-            opacity: 0.6,
-            userSelect: 'none',
-            position: 'relative',
-          }}>
-            {String(index + 1).padStart(2, '0')}
-          </span>
+          {block.imageUrl ? (
+            <img
+              src={block.imageUrl}
+              alt={block.imageAlt ?? ''}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
+          ) : (
+            <>
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: `radial-gradient(ellipse 60% 60% at ${isEven ? '70% 30%' : '30% 70%'}, rgba(201,184,168,0.3) 0%, transparent 70%)`,
+              }} />
+              <span className="font-numeric" style={{
+                fontSize: 'clamp(5rem, 10vw, 9rem)',
+                fontWeight: 500,
+                letterSpacing: '-0.04em',
+                color: 'var(--color-nude)',
+                lineHeight: 1,
+                opacity: 0.6,
+                userSelect: 'none',
+                position: 'relative',
+              }}>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+            </>
+          )}
         </div>
       </div>
     </motion.div>

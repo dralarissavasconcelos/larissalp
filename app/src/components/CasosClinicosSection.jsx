@@ -3,10 +3,17 @@ import { motion, useInView } from 'framer-motion'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react'
 import { DEPOIMENTOS_FILENAMES, depoimentoSrc } from '../data/depoimentosImages'
 
+const TAG_PROCEDIMENTO_PADRAO = 'Blefaroplastia, resultados com autorização'
+const TAG_PROCEDIMENTO_DESTAQUE = 'Correção de Ptose Palpebral'
+/** Qual foto usa a tag de destaque (0 = primeira). Ajuste se for outra imagem do carrossel. */
+const INDICE_SLIDE_TAG_DESTAQUE = 1
+
 const SLIDES = DEPOIMENTOS_FILENAMES.map((filename, index) => ({
   id: `depo-${index}-${filename}`,
   src: depoimentoSrc(filename),
   filename,
+  procedureTag:
+    index === INDICE_SLIDE_TAG_DESTAQUE ? TAG_PROCEDIMENTO_DESTAQUE : TAG_PROCEDIMENTO_PADRAO,
 }))
 
 
@@ -53,31 +60,60 @@ function ReelSlide({ slide, isActive, slideRef }) {
           bottom: 0,
           padding: '0.625rem 0.75rem',
           display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: '0.5rem',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: '0.375rem',
           background: 'linear-gradient(to top, rgba(61,53,48,0.5) 0%, transparent 100%)',
           pointerEvents: 'none',
         }}
       >
-        <span className="eyebrow-pill" style={{
-          background: 'rgba(253,250,246,0.92)',
-          color: 'var(--color-text)',
-          fontSize: '0.62rem',
-          padding: '0.2rem 0.65rem',
-        }}>
-          Caso clínico
-        </span>
-        <span style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '0.625rem',
-          fontWeight: 500,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: 'rgba(253,250,246,0.9)',
-        }}>
-          Blefaroplastia
-        </span>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+          <span
+            className="eyebrow-pill"
+            style={{
+              width: 'fit-content',
+              background: 'rgba(253,250,246,0.92)',
+              color: 'var(--color-text)',
+              fontSize: '0.62rem',
+              padding: '0.2rem 0.65rem',
+            }}
+          >
+            Caso clínico
+          </span>
+          <span
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.5625rem',
+              fontWeight: 500,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: 'rgba(253,250,246,0.95)',
+              background: 'rgba(61,53,48,0.55)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              padding: '0.35rem 0.7rem',
+              borderRadius: 'var(--radius-pill)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              maxWidth: '100%',
+              lineHeight: 1.35,
+            }}
+          >
+            {slide.procedureTag}
+          </span>
+        </div>
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '0.8125rem',
+            fontWeight: 300,
+            color: 'rgba(253,250,246,0.7)',
+            fontStyle: 'italic',
+            lineHeight: 1.5,
+            maxWidth: '36ch',
+          }}
+        >
+          Resultado real, pós-operatório. Use as setas ou deslize para o lado.
+        </p>
       </div>
     </div>
   )

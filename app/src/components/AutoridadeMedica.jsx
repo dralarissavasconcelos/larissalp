@@ -57,8 +57,11 @@ export default function AutoridadeMedica() {
                 }}
               >
                 <img
-                  src="/images/larissa.jpg"
+                  src="https://i.imgur.com/aOX8tYh.jpg"
                   alt="Dra. Larissa Vasconcelos, especialista em blefaroplastia"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
                   style={{
                     position: 'absolute',
                     inset: 0,
