@@ -1,27 +1,15 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { WhatsappLogo, ArrowRight } from '@phosphor-icons/react'
 
-const WA_NUMBER = '5511999999999'
-const WA_MESSAGE = 'Olá, Dra. Larissa Vasconcelos! Gostaria de agendar uma avaliação para blefaroplastia.'
+const WA_NUMBER = '557196803516'
+const WA_MESSAGE = 'vim pelo site pode me informar mais?'
 const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`
 
 export default function Captacao() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [formData, setFormData] = useState({ nome: '', telefone: '' })
-  const [sent, setSent] = useState(false)
 
-  const handleChange = e => setFormData(p => ({ ...p, [e.target.name]: e.target.value }))
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    if (formData.nome && formData.telefone) {
-      const msg = `Olá, Dra. Larissa Vasconcelos! Me chamo ${formData.nome} e gostaria de agendar uma avaliação. Telefone: ${formData.telefone}`
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank')
-      setSent(true)
-    }
-  }
 
   return (
     <section id="captacao" className="section" style={{ background: 'var(--color-bg)' }}>
@@ -85,94 +73,53 @@ export default function Captacao() {
             </a>
           </motion.div>
 
-          {/* Form */}
+          {/* Direct Contact */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{ position: 'relative', zIndex: 1 }}
           >
-            {sent ? (
-              <div style={{
+            <div
+              style={{
                 background: 'rgba(253,250,246,0.85)',
                 backdropFilter: 'blur(12px)',
                 border: '1px solid rgba(255,255,255,0.5)',
                 borderRadius: 'var(--radius-card)',
-                padding: '3rem 2rem',
+                padding: '3rem 2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
                 textAlign: 'center',
-              }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 400, color: 'var(--color-mocha)' }}>
-                  Obrigada.
-                </div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9375rem', fontWeight: 300, color: 'var(--color-text-muted)', marginTop: '0.75rem', lineHeight: 1.7 }}>
-                  Sua mensagem foi enviada. Em breve entraremos em contato para confirmar sua avaliação.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                style={{
-                  background: 'rgba(253,250,246,0.85)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255,255,255,0.5)',
-                  borderRadius: 'var(--radius-card)',
-                  padding: '2.5rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                  boxShadow: 'var(--shadow-soft)',
-                }}
+                gap: '1.5rem',
+                boxShadow: 'var(--shadow-soft)',
+              }}
+            >
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 500, color: 'var(--color-text)' }}>
+                Fale conosco agora
+              </h3>
+              
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+                Clique no botão abaixo para ser atendida diretamente pelo WhatsApp. Nossa equipe está pronta para tirar todas as suas dúvidas.
+              </p>
+
+              <a 
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary" 
+                style={{ marginTop: '0.5rem', justifyContent: 'center', width: '100%', maxWidth: '300px' }}
               >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 500, color: 'var(--color-text)' }}>
-                  Solicitar avaliação
-                </h3>
+                Ir para o WhatsApp
+                <span className="arrow-icon">
+                  <ArrowRight size={14} />
+                </span>
+              </a>
 
-                {[
-                  { label: 'Seu nome', name: 'nome', type: 'text', placeholder: 'Como prefere ser chamada?' },
-                  { label: 'WhatsApp', name: 'telefone', type: 'tel', placeholder: '(11) 99999-9999' },
-                ].map(field => (
-                  <div key={field.name} style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
-                    <label htmlFor={field.name} style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', fontWeight: 500, color: 'var(--color-text-muted)', letterSpacing: '0.02em' }}>
-                      {field.label}
-                    </label>
-                    <input
-                      id={field.name}
-                      name={field.name}
-                      type={field.type}
-                      placeholder={field.placeholder}
-                      value={formData[field.name]}
-                      onChange={handleChange}
-                      required
-                      style={{
-                        fontFamily: 'var(--font-body)',
-                        fontSize: '0.9375rem',
-                        fontWeight: 300,
-                        color: 'var(--color-text)',
-                        background: 'var(--color-bg)',
-                        border: '1px solid var(--color-border)',
-                        borderRadius: 'var(--radius-md)',
-                        padding: '0.875rem 1rem',
-                        outline: 'none',
-                        transition: 'border-color 0.25s, box-shadow 0.25s',
-                      }}
-                      onFocus={e => { e.target.style.borderColor = 'var(--color-mocha)'; e.target.style.boxShadow = '0 0 0 3px rgba(140,123,110,0.1)' }}
-                      onBlur={e => { e.target.style.borderColor = 'var(--color-border)'; e.target.style.boxShadow = 'none' }}
-                    />
-                  </div>
-                ))}
-
-                <button type="submit" className="btn-primary" style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
-                  Enviar pelo WhatsApp
-                  <span className="arrow-icon">
-                    <ArrowRight size={14} />
-                  </span>
-                </button>
-
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-soft)', textAlign: 'center', lineHeight: 1.5 }}>
-                  Suas informações são tratadas com sigilo e nunca compartilhadas.
-                </p>
-              </form>
-            )}
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-soft)', textAlign: 'center', lineHeight: 1.5, marginTop: '0.5rem' }}>
+                Atendimento rápido e humanizado.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

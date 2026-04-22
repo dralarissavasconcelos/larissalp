@@ -22,7 +22,7 @@ export default function Footer() {
               Dra. Larissa Vasconcelos
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-nude)', fontWeight: 500, marginTop: '2px' }}>
-              Especialista em Blefaroplastia, CRM-SP
+              Especialista em Blefaroplastia, CRMBA 25641
             </div>
           </div>
 
