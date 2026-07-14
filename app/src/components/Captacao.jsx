@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { WhatsappLogo, ArrowRight } from '@phosphor-icons/react'
 
-const WA_NUMBER = '557196803516'
-const WA_MESSAGE = 'vim pelo site pode me informar mais?'
+const WA_NUMBER = '5571996803516'
+const WA_MESSAGE = 'Vim do Site de Dra. Larissa Vasconcelos e gostaria de saber mais informações sobre a Blefaroplastia'
 const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`
 
 export default function Captacao() {

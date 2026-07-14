@@ -1,8 +1,8 @@
 // ─── Número de WhatsApp da Dra. Larissa ─────────────────────────────────────
-export const WA_NUMBER = '5511999999999'
+export const WA_NUMBER = '5571996803516'
 
 export function waLink(procedure) {
-  const msg = `Olá, Dra. Larissa! Gostaria de agendar uma avaliação para ${procedure}.`
+  const msg = 'Vim do Site de Dra. Larissa Vasconcelos e gostaria de saber mais informações sobre a Blefaroplastia'
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
 }
 

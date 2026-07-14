@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { WhatsappLogo } from '@phosphor-icons/react'
 
-const WA_NUMBER = '5511999999999'
-const WA_MESSAGE = 'Olá, Dra. Larissa Vasconcelos! Gostaria de agendar uma avaliação para blefaroplastia.'
+const WA_NUMBER = '5571996803516'
+const WA_MESSAGE = 'Vim do Site de Dra. Larissa Vasconcelos e gostaria de saber mais informações sobre a Blefaroplastia'
 const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`
 
 export default function WhatsAppFAB() {
